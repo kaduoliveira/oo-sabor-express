@@ -18,10 +18,12 @@ class Livro:
 
 class Pessoa:
     pessoas = []
+
     def __init__(self, nome, idade, profissao):
         self.nome = nome.title()
         self.idade = idade
         self.profissao = profissao.upper()
+        Pessoa.pessoas.append(self)
     
     def __str__(self):
         return f'{self.nome} - {self.idade} anos - {self.profissao}'
@@ -33,4 +35,8 @@ class Pessoa:
 
 pessoa1 = Pessoa('laura', 9, 'filha 1')
 pessoa2 = Pessoa('helena', 2, 'filha 2')
+
+print(pessoa1)
+print(pessoa2)
+
 Pessoa.listar_pessoas()
