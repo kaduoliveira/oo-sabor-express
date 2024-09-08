@@ -35,8 +35,9 @@ class Pessoa:
 
 pessoa1 = Pessoa('laura', 9, 'filha 1')
 pessoa2 = Pessoa('helena', 2, 'filha 2')
+pessoa3 = Pessoa(input('nome: '), input('idade: '), input('profissão: '))
 
 print(pessoa1)
 print(pessoa2)
 
-Pessoa.listar_pessoas()
+Pessoa.listar_pessoas() 
