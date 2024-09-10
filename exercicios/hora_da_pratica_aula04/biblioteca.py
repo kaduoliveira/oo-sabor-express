@@ -6,10 +6,10 @@ from hora_da_pratica_aula04 import Livro
 
 livro_biblioteca = Livro('Cinderela', 'Disney', 1700)
 print(f'O livro "{livro_biblioteca.titulo}" do autor {livro_biblioteca.autor} está disponivel? {livro_biblioteca.disponivel}')
-#Livro.emprestar(livro_biblioteca)
+Livro.emprestar(livro_biblioteca)
 print(f'O livro "{livro_biblioteca.titulo}" do autor {livro_biblioteca.autor} está disponivel? {livro_biblioteca.disponivel}')
-
+Livro.listar_livros()
 #No arquivo biblioteca.py, utilize o método estático verificar_disponibilidade para obter a lista de livros disponíveis publicados em um ano específico.
-ano_especifico = 1994
+ano_especifico = 1948
 livros_disponiveis_ano = Livro.verificar_disponibilidade(ano_especifico)
 print(f"Livros disponíveis em {ano_especifico}: {livros_disponiveis_ano}")
