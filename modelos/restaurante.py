@@ -1,4 +1,5 @@
 from modelos.avaliacao import Avaliacao
+from modelos.cardapio.item_cardapio import ItemCardapio
 
 class Restaurante:
     restaurantes = [] #a classe Restaurantes vai ter uma lista dentro de si para uso livre
@@ -8,6 +9,7 @@ class Restaurante:
         self._categoria = categoria.upper()
         self._ativo = False #usando _ eu torno o atributo privado, nao acessivel de forma direta
         self._avaliacao = []
+        self._cardapio = []
         Restaurante.restaurantes.append(self) #o construtor tá incluindo um novo valor no dicionario restaurantes sempre q um novo objeto é instanciado
 
     def __str__(self):
@@ -39,3 +41,19 @@ class Restaurante:
         quantidade_de_notas = len(self._avaliacao)
         media = round(soma_das_notas / quantidade_de_notas, 1)
         return media
+  
+    def adicionar_no_cardapio(self, item):
+        if isinstance(item, ItemCardapio):
+            self._cardapio.append(item)
+
+    @property
+    def exibir_cardapio(self):
+        print(f'\nCardápio do restaurante {self._nome}')
+        for i, item in enumerate(self._cardapio, start=1):
+            if hasattr(item, 'descricao'):
+                mensagem_prato = f'{i}. {item._nome} - R$ {item._preco} - {item.descricao}'
+                print(mensagem_prato) 
+            else:
+                mensagem_bebida = f'{i}. {item._nome} - R$ {item._preco} - {item.tamanho}'
+                print(mensagem_bebida) 
+        print()
