@@ -1,6 +1,6 @@
-from ABC import ABC, abstractmethod
+from abc import ABC, abstractmethod
 
-class ItemCardapio:
+class ItemCardapio(ABC):
     def __init__(self, nome, preco):
         self._nome = nome
         self._preco = preco

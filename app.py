@@ -2,6 +2,7 @@ import os
 from modelos.restaurante import Restaurante
 from modelos.cardapio.bebida import Bebida
 from modelos.cardapio.prato import Prato
+from modelos.cardapio.item_cardapio import ItemCardapio
 
 restaurante1 = Restaurante('Praca', 'Gourmet')
 restaurante2 = Restaurante('Mexican Food', 'Mexicana')
@@ -17,6 +18,8 @@ prato1 = Prato('Macarronada', 14.9, 'Espaguete bolonhesa')
 bebida1 = Bebida('Suco de manga', 5.0, '300ml')
 bebida2 = Bebida('Coca-cola', 4.00, 'lata 350ml')
 prato2 = Prato('Lasanha', 19.90, 'Massa em camadas a bolonhesa')
+prato2.aplicar_desconto()
+bebida2.aplicar_desconto()
 
 restaurante1.adicionar_no_cardapio(bebida1)
 restaurante1.adicionar_no_cardapio(prato1)
