@@ -5,7 +5,7 @@ from modelos.cardapio.prato import Prato
 from modelos.cardapio.item_cardapio import ItemCardapio
 from modelos.cardapio.sobremesa import Sobremesa
 
-restaurante1 = Restaurante('Praca', 'Gourmet')
+restaurante1 = Restaurante('Praça', 'Gourmet')
 restaurante2 = Restaurante('Mexican Food', 'Mexicana')
 restaurante3 = Restaurante('Japa', 'Japones')
 
@@ -23,18 +23,18 @@ prato2.aplicar_desconto()
 bebida2.aplicar_desconto()
 sobremesa1 = Sobremesa('Pudim', 8.00, 'gelada', '100g', 'A base de leite com calda de caramelo')
 sobremesa1.aplicar_desconto()
+sobremesa2 = Sobremesa('Sorvete', 7.00, 'Gelada', '2 bolas', 'Sorvete de baunilha servido com cobertura a sua escolha')
 
 restaurante1.adicionar_no_cardapio(bebida1)
 restaurante1.adicionar_no_cardapio(prato1)
 restaurante1.adicionar_no_cardapio(bebida2)
 restaurante1.adicionar_no_cardapio(prato2)
 restaurante1.adicionar_no_cardapio(sobremesa1)
+restaurante1.adicionar_no_cardapio(sobremesa2)
 
 def main():
     os.system('cls')
-    restaurante1.exibir_cardapio
-    print(sobremesa1)
-    
+    restaurante1.exibir_cardapio    
 
 if __name__ == '__main__':
     main()
